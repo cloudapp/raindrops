@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BA182351304C2B500B82CCB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA182341304C2B500B82CCB /* Cocoa.framework */; };
+		4BA182481304C2C000B82CCB /* CLSafariRaindrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA182471304C2C000B82CCB /* CLSafariRaindrop.m */; };
+		4BA182541304C3E200B82CCB /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA182531304C3E200B82CCB /* ScriptingBridge.framework */; };
+		8C3D6C9B131AF37E00B25BDF /* Raindrop.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C3D6C98131AF37E00B25BDF /* Raindrop.plist */; };
+		8C3D6CB4131AF3AB00B25BDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C3D6CB3131AF3AB00B25BDF /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4BA182311304C2B500B82CCB /* Safari.raindrop */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Safari.raindrop; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BA182341304C2B500B82CCB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4BA182371304C2B500B82CCB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4BA182381304C2B500B82CCB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4BA182391304C2B500B82CCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4BA182461304C2C000B82CCB /* CLSafariRaindrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLSafariRaindrop.h; sourceTree = "<group>"; };
+		4BA182471304C2C000B82CCB /* CLSafariRaindrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLSafariRaindrop.m; sourceTree = "<group>"; };
+		4BA1824B1304C30F00B82CCB /* CLRaindropProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLRaindropProtocol.h; path = ../CLRaindropProtocol.h; sourceTree = "<group>"; };
+		4BA182521304C3D800B82CCB /* Safari.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safari.h; sourceTree = "<group>"; };
+		4BA182531304C3E200B82CCB /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		8C3D6C98131AF37E00B25BDF /* Raindrop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Raindrop.plist; sourceTree = "<group>"; };
+		8C3D6C99131AF37E00B25BDF /* Safari-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Safari-Info.plist"; sourceTree = "<group>"; };
+		8C3D6C9A131AF37E00B25BDF /* Safari-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Safari-Prefix.pch"; sourceTree = "<group>"; };
+		8C3D6CB1131AF3A900B25BDF /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BA1822E1304C2B500B82CCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA182541304C3E200B82CCB /* ScriptingBridge.framework in Frameworks */,
+				4BA182351304C2B500B82CCB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BA182261304C2B500B82CCB = {
+			isa = PBXGroup;
+			children = (
+				8C3D6CB7131AF3B700B25BDF /* Classes */,
+				8C3D6CA5131AF38C00B25BDF /* Other Sources */,
+				8C3D6C94131AF36F00B25BDF /* Resources */,
+				4BA182331304C2B500B82CCB /* Frameworks */,
+				4BA182321304C2B500B82CCB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BA182321304C2B500B82CCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BA182311304C2B500B82CCB /* Safari.raindrop */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BA182331304C2B500B82CCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BA182531304C3E200B82CCB /* ScriptingBridge.framework */,
+				4BA182341304C2B500B82CCB /* Cocoa.framework */,
+				4BA182361304C2B500B82CCB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BA182361304C2B500B82CCB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BA182371304C2B500B82CCB /* AppKit.framework */,
+				4BA182381304C2B500B82CCB /* CoreData.framework */,
+				4BA182391304C2B500B82CCB /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		8C3D6C94131AF36F00B25BDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C3D6CB3131AF3AB00B25BDF /* InfoPlist.strings */,
+				8C3D6C98131AF37E00B25BDF /* Raindrop.plist */,
+				8C3D6C99131AF37E00B25BDF /* Safari-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8C3D6CA5131AF38C00B25BDF /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8C3D6C9A131AF37E00B25BDF /* Safari-Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		8C3D6CB7131AF3B700B25BDF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4BA182461304C2C000B82CCB /* CLSafariRaindrop.h */,
+				4BA182471304C2C000B82CCB /* CLSafariRaindrop.m */,
+				4BA1824B1304C30F00B82CCB /* CLRaindropProtocol.h */,
+				4BA182521304C3D800B82CCB /* Safari.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BA182301304C2B500B82CCB /* Safari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BA182431304C2B500B82CCB /* Build configuration list for PBXNativeTarget "Safari" */;
+			buildPhases = (
+				4BA1822D1304C2B500B82CCB /* Sources */,
+				4BA1822E1304C2B500B82CCB /* Frameworks */,
+				4BA1822F1304C2B500B82CCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Safari;
+			productName = Safari;
+			productReference = 4BA182311304C2B500B82CCB /* Safari.raindrop */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BA182281304C2B500B82CCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Linebreak;
+			};
+			buildConfigurationList = 4BA1822B1304C2B500B82CCB /* Build configuration list for PBXProject "Safari" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4BA182261304C2B500B82CCB;
+			productRefGroup = 4BA182321304C2B500B82CCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BA182301304C2B500B82CCB /* Safari */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BA1822F1304C2B500B82CCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C3D6C9B131AF37E00B25BDF /* Raindrop.plist in Resources */,
+				8C3D6CB4131AF3AB00B25BDF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BA1822D1304C2B500B82CCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA182481304C2C000B82CCB /* CLSafariRaindrop.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C3D6CB3131AF3AB00B25BDF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C3D6CB1131AF3A900B25BDF /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4BA182411304C2B500B82CCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4BA182421304C2B500B82CCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4BA182441304C2B500B82CCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Safari-Prefix.pch";
+				INFOPLIST_FILE = "Safari-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = raindrop;
+			};
+			name = Debug;
+		};
+		4BA182451304C2B500B82CCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Safari-Prefix.pch";
+				INFOPLIST_FILE = "Safari-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = raindrop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BA1822B1304C2B500B82CCB /* Build configuration list for PBXProject "Safari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BA182411304C2B500B82CCB /* Debug */,
+				4BA182421304C2B500B82CCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BA182431304C2B500B82CCB /* Build configuration list for PBXNativeTarget "Safari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BA182441304C2B500B82CCB /* Debug */,
+				4BA182451304C2B500B82CCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4BA182281304C2B500B82CCB /* Project object */;
+}

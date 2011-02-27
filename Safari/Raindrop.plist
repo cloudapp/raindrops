@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLRaindropCreator</key>
+	<string>Linebreak S.L.</string>
+	<key>CLRaindropDescription</key>
+	<string>Shortens the front window&apos;s URL.</string>
+	<key>CLRaindropName</key>
+	<string>Safari</string>
+	<key>CLRaindropTargetBundleID</key>
+	<string>com.apple.Safari</string>
+	<key>CLRaindropURL</key>
+	<string>http://getcloudapp.com/</string>
+</dict>
+</plist>

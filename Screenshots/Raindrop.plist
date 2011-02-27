@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLRaindropCreator</key>
+	<string>Linebreak S.L.</string>
+	<key>CLRaindropURL</key>
+	<string>http://getcloudapp.com/</string>
+	<key>CLRaindropName</key>
+	<string>Screenshots</string>
+	<key>CLRaindropDescription</key>
+	<string>Automatically uploads screenshot files.</string>
+	<key>CLRaindropDownpourEnabled</key>
+	<true/>
+	<key>CLRaindropDownpourActionDescription</key>
+	<string>Autoupload Screenshots</string>
+</dict>
+</plist>

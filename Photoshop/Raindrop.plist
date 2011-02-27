@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLRaindropCreator</key>
+	<string>Linebreak S.L.</string>
+	<key>CLRaindropURL</key>
+	<string>http://getcloudapp.com/</string>
+	<key>CLRaindropTargetBundleID</key>
+	<string>com.adobe.Photoshop</string>
+	<key>CLRaindropName</key>
+	<string>Photoshop</string>
+	<key>CLRaindropDescription</key>
+	<string>Uploads the frontmost document in its current state.</string>
+</dict>
+</plist>

@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B7813781304BD6500D4153B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7813771304BD6500D4153B /* Cocoa.framework */; };
+		4B78138A1304BDA200D4153B /* Raindrop.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B7813891304BDA200D4153B /* Raindrop.plist */; };
+		4B7813951304BE0100D4153B /* CLFinderRaindrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7813941304BE0100D4153B /* CLFinderRaindrop.m */; };
+		4BA182241304C23200B82CCB /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA182231304C23200B82CCB /* ScriptingBridge.framework */; };
+		8C3D6C79131AF2EB00B25BDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C3D6C78131AF2EB00B25BDF /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B7813741304BD6500D4153B /* Finder.raindrop */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Finder.raindrop; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7813771304BD6500D4153B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4B78137A1304BD6500D4153B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4B78137B1304BD6500D4153B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4B78137C1304BD6500D4153B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4B78137F1304BD6500D4153B /* Finder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Finder-Info.plist"; sourceTree = "<group>"; };
+		4B7813831304BD6500D4153B /* Finder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Finder-Prefix.pch"; sourceTree = "<group>"; };
+		4B7813891304BDA200D4153B /* Raindrop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Raindrop.plist; sourceTree = "<group>"; };
+		4B7813911304BDDC00D4153B /* Finder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Finder.h; sourceTree = "<group>"; };
+		4B7813941304BE0100D4153B /* CLFinderRaindrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLFinderRaindrop.m; sourceTree = "<group>"; };
+		4BA182231304C23200B82CCB /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		4BA1824A1304C2FF00B82CCB /* CLRaindropProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLRaindropProtocol.h; path = ../CLRaindropProtocol.h; sourceTree = "<group>"; };
+		8C3D6C53131AF27300B25BDF /* CLFinderRaindrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLFinderRaindrop.h; sourceTree = "<group>"; };
+		8C3D6C76131AF2E800B25BDF /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B7813711304BD6500D4153B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA182241304C23200B82CCB /* ScriptingBridge.framework in Frameworks */,
+				4B7813781304BD6500D4153B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B7813691304BD6500D4153B = {
+			isa = PBXGroup;
+			children = (
+				8C3D6C69131AF28500B25BDF /* Classes */,
+				8C3D6CD2131AF42000B25BDF /* Other Sources */,
+				8C3D6C73131AF29A00B25BDF /* Resources */,
+				4B7813761304BD6500D4153B /* Frameworks */,
+				4B7813751304BD6500D4153B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4B7813751304BD6500D4153B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B7813741304BD6500D4153B /* Finder.raindrop */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B7813761304BD6500D4153B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BA182231304C23200B82CCB /* ScriptingBridge.framework */,
+				4B7813771304BD6500D4153B /* Cocoa.framework */,
+				4B7813791304BD6500D4153B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B7813791304BD6500D4153B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B78137A1304BD6500D4153B /* AppKit.framework */,
+				4B78137B1304BD6500D4153B /* CoreData.framework */,
+				4B78137C1304BD6500D4153B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		8C3D6C69131AF28500B25BDF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8C3D6C53131AF27300B25BDF /* CLFinderRaindrop.h */,
+				4B7813941304BE0100D4153B /* CLFinderRaindrop.m */,
+				4B7813911304BDDC00D4153B /* Finder.h */,
+				4BA1824A1304C2FF00B82CCB /* CLRaindropProtocol.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		8C3D6C73131AF29A00B25BDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B78137F1304BD6500D4153B /* Finder-Info.plist */,
+				8C3D6C78131AF2EB00B25BDF /* InfoPlist.strings */,
+				4B7813891304BDA200D4153B /* Raindrop.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8C3D6CD2131AF42000B25BDF /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4B7813831304BD6500D4153B /* Finder-Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B7813731304BD6500D4153B /* Finder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B7813861304BD6500D4153B /* Build configuration list for PBXNativeTarget "Finder" */;
+			buildPhases = (
+				4B7813701304BD6500D4153B /* Sources */,
+				4B7813711304BD6500D4153B /* Frameworks */,
+				4B7813721304BD6500D4153B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Finder;
+			productName = Finder;
+			productReference = 4B7813741304BD6500D4153B /* Finder.raindrop */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B78136B1304BD6500D4153B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Linebreak;
+			};
+			buildConfigurationList = 4B78136E1304BD6500D4153B /* Build configuration list for PBXProject "Finder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4B7813691304BD6500D4153B;
+			productRefGroup = 4B7813751304BD6500D4153B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B7813731304BD6500D4153B /* Finder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B7813721304BD6500D4153B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B78138A1304BDA200D4153B /* Raindrop.plist in Resources */,
+				8C3D6C79131AF2EB00B25BDF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B7813701304BD6500D4153B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B7813951304BE0100D4153B /* CLFinderRaindrop.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8C3D6C78131AF2EB00B25BDF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C3D6C76131AF2E800B25BDF /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4B7813841304BD6500D4153B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4B7813851304BD6500D4153B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4B7813871304BD6500D4153B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Finder-Prefix.pch";
+				INFOPLIST_FILE = "Finder-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = raindrop;
+			};
+			name = Debug;
+		};
+		4B7813881304BD6500D4153B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Finder-Prefix.pch";
+				INFOPLIST_FILE = "Finder-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = raindrop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B78136E1304BD6500D4153B /* Build configuration list for PBXProject "Finder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B7813841304BD6500D4153B /* Debug */,
+				4B7813851304BD6500D4153B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B7813861304BD6500D4153B /* Build configuration list for PBXNativeTarget "Finder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B7813871304BD6500D4153B /* Debug */,
+				4B7813881304BD6500D4153B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B78136B1304BD6500D4153B /* Project object */;
+}
