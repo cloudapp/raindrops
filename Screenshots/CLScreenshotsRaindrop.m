@@ -47,6 +47,14 @@
 		}
 		NSMetadataItem *metadata = [_metadataQuery resultAtIndex:resultCount - 1];
 		
+		// Check dates (NSPredicate fails to do so)
+		NSDate *modificationDate = [metadata valueForAttribute:@"kMDItemContentModificationDate"];
+		NSDate *creationDate     = [metadata valueForAttribute:@"kMDItemContentCreationDate"];
+		NSDate *lastUsedDate     = [metadata valueForAttribute:@"kMDItemLastUsedDate"];
+		if (![creationDate isEqualToDate:modificationDate] || ![creationDate isEqualToDate:lastUsedDate]) {
+			return;
+		}
+		
 		NSString *filename = [metadata valueForAttribute:@"kMDItemFSName"];
 		if (filename != nil) {
 			NSString *path = [[self screenCaptureLocation] stringByAppendingPathComponent:filename];
