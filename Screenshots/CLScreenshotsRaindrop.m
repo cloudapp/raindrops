@@ -2,106 +2,102 @@
 //  CLScreenshotsRaindrop.m
 //  Screenshots
 //
-//  Created by Nick Paulson on 1/28/11.
+//  Created by Nick Paulson & Matthias Plappert on 1/28/11.
 //  Copyright 2011 Linebreak. All rights reserved.
 //
 
 #import "CLScreenshotsRaindrop.h"
 #import "CLRaindropHelperProtocol.h"
 
-@interface CLScreenshotsRaindrop ()
-@property (nonatomic, readwrite, copy) NSMutableSet *currentFileSet;
-@end
 
 @implementation CLScreenshotsRaindrop
-@synthesize helper = _helper, currentFileSet = _currentFileSet;
 
-- (id)initWithHelper:(id <CLRaindropHelperProtocol>)theHelper {
+@synthesize helper = _helper;
+
+- (id)initWithHelper:(id <CLRaindropHelperProtocol>)theHelper
+{
 	if ((self = [super init])) {
 		self.helper = theHelper;
-		NSString *filePath = [[self class] screenCaptureLocation];
-		int fd = open([filePath UTF8String], O_EVTONLY);
-		if (fd == -1) {
-			[self release];
-			return nil;
-		}
-		// Cleanup block
-		void(^cleanup)() = ^{
-			close(fd);
-		};
 		
-		// Create source
-		_watcherSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE,
-												fd, (DISPATCH_VNODE_WRITE), 
-												dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0));
-		if (!_watcherSource) {
-			cleanup();
-			[self release];
-			return nil;
-		}
-		NSString *regexString = [[NSBundle bundleForClass:[self class]] objectForInfoDictionaryKey:@"CLScreenshotRegex"];
-		self.currentFileSet = [NSMutableSet setWithArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:filePath error:nil]];
-		
-		// Dispatch source handler
-		dispatch_source_set_event_handler(_watcherSource, ^{
-			NSError *error = nil;
-			NSArray *currFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:filePath error:&error];
-			if (currFiles != nil && error == nil) {
-				NSMutableSet *newSet = [NSMutableSet setWithArray:currFiles];
-				if ([newSet count] >= [self.currentFileSet count]) {
-					[newSet minusSet:self.currentFileSet];
-					NSMutableArray *pbItems = [NSMutableArray array];
-					for (NSString *newFile in newSet) {
-						if ([[NSPredicate predicateWithFormat:@"SELF MATCHES %@", regexString] evaluateWithObject:newFile]) {
-							NSPasteboardItem *item = [[NSPasteboardItem alloc] init];
-							[item setString:[[NSURL fileURLWithPath:[filePath stringByAppendingPathComponent:newFile]] absoluteString] forType:(NSString *)kUTTypeFileURL];
-							[pbItems addObject:item];
-							[item release];
-						}
-					}
-					if ([pbItems count] > 0) {
-						NSPasteboard *pasteboard = [NSPasteboard pasteboardWithUniqueName];
-						if ([pasteboard writeObjects:pbItems])
-							[self.helper handlePasteboardWithName:pasteboard.name];
-					}
-				}
-				self.currentFileSet = [NSMutableSet setWithArray:currFiles];
-			}
-		});
-		
-		dispatch_source_set_cancel_handler(_watcherSource, ^{ cleanup(); });
-		
-		dispatch_resume(_watcherSource);
+		_metadataQuery = [[NSMetadataQuery alloc] init];
+		[_metadataQuery setSearchScopes:[NSArray arrayWithObject:[self screenCaptureLocation]]];
+		NSString *predicateFormat = @"(kMDItemIsScreenCapture = YES) && (kMDItemContentCreationDate > %@)";
+		NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat, [NSDate date]];
+		[_metadataQuery setPredicate:predicate];
+		[_metadataQuery setNotificationBatchingInterval:0.1f];
+		[_metadataQuery addObserver:self
+						 forKeyPath:@"resultCount"
+							options:NSKeyValueObservingOptionNew
+							context:NULL];
+		[_metadataQuery startQuery];
 	}
 	return self;
 }
 
-- (void)dealloc {
-	self.helper = nil;
-	self.currentFileSet = nil;
-	[super dealloc];
+#pragma mark -
+#pragma mark KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	if (object == _metadataQuery && [keyPath isEqualToString:@"resultCount"]) {
+		// Get latest metadata item
+		NSUInteger resultCount = [[change objectForKey:NSKeyValueChangeNewKey] unsignedIntValue];
+		if (resultCount == 0) {
+			return;
+		}
+		NSMetadataItem *metadata = [_metadataQuery resultAtIndex:resultCount - 1];
+		
+		NSString *filename = [metadata valueForAttribute:@"kMDItemFSName"];
+		if (filename != nil) {
+			NSString *path = [[self screenCaptureLocation] stringByAppendingPathComponent:filename];
+			if (path != nil && [[NSFileManager defaultManager] fileExistsAtPath:path]) {
+				// Create pasteboard
+				NSPasteboard *pasteboard = [NSPasteboard pasteboardWithUniqueName];
+				
+				NSPasteboardItem *item = [[NSPasteboardItem alloc] init];
+				[item setString:[[NSURL fileURLWithPath:path] absoluteString] forType:(NSString *)kUTTypeFileURL];
+				if ([pasteboard writeObjects:[NSArray arrayWithObject:item]]) {
+					[self.helper handlePasteboardWithName:pasteboard.name];
+				}
+				[item release];
+			}
+		}
+	}
 }
 
-+ (NSString *)screenCaptureLocation {
+#pragma mark -
+#pragma mark Accessors
+
+- (NSString *)screenCaptureLocation
+{
 	NSString *location = [[self screenCapturePrefs] objectForKey:@"location"];
 	if (location) {
 		location = [location stringByExpandingTildeInPath];
-		if (![location hasSuffix:@"/"])
+		if (![location hasSuffix:@"/"]) {
 			location = [location stringByAppendingString:@"/"];
+		}
 		return location;
 	}
+	
 	return [[@"~/Desktop" stringByExpandingTildeInPath] stringByAppendingString:@"/"];
 }
 
-+ (NSString *)screenCaptureType {
-	NSString *type = [[self screenCapturePrefs] objectForKey:@"type"];
-	if (type)
-		return type;
-	return @"png";
+- (NSDictionary *)screenCapturePrefs
+{
+	return [[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.screencapture"];
 }
 
-+ (NSDictionary *)screenCapturePrefs {
-	return [[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.screencapture"];
+#pragma mark -
+#pragma mark Memory management
+
+- (void)dealloc
+{
+	self.helper = nil;
+	
+	[_metadataQuery stopQuery];
+	[_metadataQuery release];
+	
+	[super dealloc];
 }
 
 @end
