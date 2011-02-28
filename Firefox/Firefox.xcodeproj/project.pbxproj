@@ -1,0 +1,276 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B6FCFEF131B36D8002CBE11 /* NSPasteboard+NPStateRestoration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6FCFEE131B36D8002CBE11 /* NSPasteboard+NPStateRestoration.m */; };
+		4B9D6B89131B21CB000DDCE6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9D6B88131B21CB000DDCE6 /* Cocoa.framework */; };
+		4B9D6B93131B21CB000DDCE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D6B91131B21CB000DDCE6 /* InfoPlist.strings */; };
+		4B9D6B9C131B221C000DDCE6 /* CLFirefoxRaindrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9D6B9B131B221C000DDCE6 /* CLFirefoxRaindrop.m */; };
+		4B9D6BA0131B223F000DDCE6 /* Raindrop.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D6B9F131B223F000DDCE6 /* Raindrop.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B6FCFED131B36D8002CBE11 /* NSPasteboard+NPStateRestoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSPasteboard+NPStateRestoration.h"; path = "../../NSPasteboard+NPStateRestoration.h"; sourceTree = "<group>"; };
+		4B6FCFEE131B36D8002CBE11 /* NSPasteboard+NPStateRestoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSPasteboard+NPStateRestoration.m"; path = "../../NSPasteboard+NPStateRestoration.m"; sourceTree = "<group>"; };
+		4B9D6B85131B21CB000DDCE6 /* Firefox.raindrop */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Firefox.raindrop; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B9D6B88131B21CB000DDCE6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4B9D6B8B131B21CB000DDCE6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4B9D6B8C131B21CB000DDCE6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4B9D6B8D131B21CB000DDCE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4B9D6B90131B21CB000DDCE6 /* Firefox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Firefox-Info.plist"; sourceTree = "<group>"; };
+		4B9D6B92131B21CB000DDCE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4B9D6B94131B21CB000DDCE6 /* Firefox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Firefox-Prefix.pch"; sourceTree = "<group>"; };
+		4B9D6B9A131B221C000DDCE6 /* CLFirefoxRaindrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLFirefoxRaindrop.h; sourceTree = "<group>"; };
+		4B9D6B9B131B221C000DDCE6 /* CLFirefoxRaindrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLFirefoxRaindrop.m; sourceTree = "<group>"; };
+		4B9D6B9D131B222E000DDCE6 /* CLRaindropHelperProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLRaindropHelperProtocol.h; path = ../../CLRaindropHelperProtocol.h; sourceTree = "<group>"; };
+		4B9D6B9E131B222E000DDCE6 /* CLRaindropProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLRaindropProtocol.h; path = ../../CLRaindropProtocol.h; sourceTree = "<group>"; };
+		4B9D6B9F131B223F000DDCE6 /* Raindrop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Raindrop.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B9D6B82131B21CB000DDCE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B9D6B89131B21CB000DDCE6 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B9D6B7A131B21CB000DDCE6 = {
+			isa = PBXGroup;
+			children = (
+				4B9D6B8E131B21CB000DDCE6 /* Firefox */,
+				4B9D6B87131B21CB000DDCE6 /* Frameworks */,
+				4B9D6B86131B21CB000DDCE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4B9D6B86131B21CB000DDCE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B9D6B85131B21CB000DDCE6 /* Firefox.raindrop */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B9D6B87131B21CB000DDCE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B9D6B88131B21CB000DDCE6 /* Cocoa.framework */,
+				4B9D6B8A131B21CB000DDCE6 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B9D6B8A131B21CB000DDCE6 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B9D6B8B131B21CB000DDCE6 /* AppKit.framework */,
+				4B9D6B8C131B21CB000DDCE6 /* CoreData.framework */,
+				4B9D6B8D131B21CB000DDCE6 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4B9D6B8E131B21CB000DDCE6 /* Firefox */ = {
+			isa = PBXGroup;
+			children = (
+				4B9D6B8F131B21CB000DDCE6 /* Supporting Files */,
+				4B9D6B9A131B221C000DDCE6 /* CLFirefoxRaindrop.h */,
+				4B9D6B9B131B221C000DDCE6 /* CLFirefoxRaindrop.m */,
+				4B6FCFED131B36D8002CBE11 /* NSPasteboard+NPStateRestoration.h */,
+				4B6FCFEE131B36D8002CBE11 /* NSPasteboard+NPStateRestoration.m */,
+				4B9D6B9D131B222E000DDCE6 /* CLRaindropHelperProtocol.h */,
+				4B9D6B9E131B222E000DDCE6 /* CLRaindropProtocol.h */,
+			);
+			path = Firefox;
+			sourceTree = "<group>";
+		};
+		4B9D6B8F131B21CB000DDCE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B9D6B9F131B223F000DDCE6 /* Raindrop.plist */,
+				4B9D6B90131B21CB000DDCE6 /* Firefox-Info.plist */,
+				4B9D6B91131B21CB000DDCE6 /* InfoPlist.strings */,
+				4B9D6B94131B21CB000DDCE6 /* Firefox-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B9D6B84131B21CB000DDCE6 /* Firefox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B9D6B97131B21CC000DDCE6 /* Build configuration list for PBXNativeTarget "Firefox" */;
+			buildPhases = (
+				4B9D6B81131B21CB000DDCE6 /* Sources */,
+				4B9D6B82131B21CB000DDCE6 /* Frameworks */,
+				4B9D6B83131B21CB000DDCE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Firefox;
+			productName = Firefox;
+			productReference = 4B9D6B85131B21CB000DDCE6 /* Firefox.raindrop */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B9D6B7C131B21CB000DDCE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Linebreak;
+			};
+			buildConfigurationList = 4B9D6B7F131B21CB000DDCE6 /* Build configuration list for PBXProject "Firefox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4B9D6B7A131B21CB000DDCE6;
+			productRefGroup = 4B9D6B86131B21CB000DDCE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B9D6B84131B21CB000DDCE6 /* Firefox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B9D6B83131B21CB000DDCE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B9D6B93131B21CB000DDCE6 /* InfoPlist.strings in Resources */,
+				4B9D6BA0131B223F000DDCE6 /* Raindrop.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B9D6B81131B21CB000DDCE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B9D6B9C131B221C000DDCE6 /* CLFirefoxRaindrop.m in Sources */,
+				4B6FCFEF131B36D8002CBE11 /* NSPasteboard+NPStateRestoration.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4B9D6B91131B21CB000DDCE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B9D6B92131B21CB000DDCE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4B9D6B95131B21CC000DDCE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4B9D6B96131B21CC000DDCE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4B9D6B98131B21CC000DDCE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Firefox/Firefox-Prefix.pch";
+				INFOPLIST_FILE = "Firefox/Firefox-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = raindrop;
+			};
+			name = Debug;
+		};
+		4B9D6B99131B21CC000DDCE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Firefox/Firefox-Prefix.pch";
+				INFOPLIST_FILE = "Firefox/Firefox-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = raindrop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B9D6B7F131B21CB000DDCE6 /* Build configuration list for PBXProject "Firefox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B9D6B95131B21CC000DDCE6 /* Debug */,
+				4B9D6B96131B21CC000DDCE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B9D6B97131B21CC000DDCE6 /* Build configuration list for PBXNativeTarget "Firefox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B9D6B98131B21CC000DDCE6 /* Debug */,
+				4B9D6B99131B21CC000DDCE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4B9D6B7C131B21CB000DDCE6 /* Project object */;
+}
