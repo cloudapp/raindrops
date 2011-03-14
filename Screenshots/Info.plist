@@ -24,7 +24,5 @@
 	<string>1</string>
 	<key>NSPrincipalClass</key>
 	<string>CLScreenshotsRaindrop</string>
-	<key>CLScreenshotRegex</key>
-	<string>[^\.].*</string>
 </dict>
 </plist>
