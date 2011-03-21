@@ -11,7 +11,7 @@
 #import "CLRaindropHelperProtocol.h"
 
 
-@interface CLScreenshotsRaindrop : NSObject <CLRaindropProtocol> {
+@interface CLScreenshotsRaindrop : NSObject <CLRaindropProtocol, NSMetadataQueryDelegate> {
 	id <CLRaindropHelperProtocol> _helper;
 	NSMetadataQuery *_metadataQuery;
 }

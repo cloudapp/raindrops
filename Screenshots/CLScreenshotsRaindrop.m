@@ -19,17 +19,15 @@
 	if ((self = [super init])) {
 		self.helper = theHelper;
 		
+        // Setup query. Do not use KVO because it (for very odd reasons) retains the observer
 		_metadataQuery = [[NSMetadataQuery alloc] init];
 		[_metadataQuery setSearchScopes:[NSArray arrayWithObject:[self screenCaptureLocation]]];
 		NSString *predicateFormat = @"(kMDItemIsScreenCapture = YES) && (kMDItemContentCreationDate > %@)";
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat, [NSDate date]];
 		[_metadataQuery setPredicate:predicate];
 		[_metadataQuery setNotificationBatchingInterval:0.1f];
-		[_metadataQuery addObserver:self
-						 forKeyPath:@"resultCount"
-							options:NSKeyValueObservingOptionNew
-							context:NULL];
-		[_metadataQuery startQuery];
+        [_metadataQuery setDelegate:self];
+		[_metadataQuery startQuery]; 
 	}
 	return self;
 }
@@ -37,40 +35,37 @@
 #pragma mark -
 #pragma mark KVO
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-	if (object == _metadataQuery && [keyPath isEqualToString:@"resultCount"]) {
-		// Get latest metadata item
-		NSUInteger resultCount = [[change objectForKey:NSKeyValueChangeNewKey] unsignedIntValue];
-		if (resultCount == 0) {
-			return;
-		}
-		NSMetadataItem *metadata = [_metadataQuery resultAtIndex:resultCount - 1];
-		
-		// Check dates (NSPredicate fails to do so)
-		NSDate *modificationDate = [metadata valueForAttribute:@"kMDItemContentModificationDate"];
-		NSDate *creationDate     = [metadata valueForAttribute:@"kMDItemContentCreationDate"];
-		NSDate *lastUsedDate     = [metadata valueForAttribute:@"kMDItemLastUsedDate"];
-		if (![creationDate isEqualToDate:modificationDate] || ![creationDate isEqualToDate:lastUsedDate]) {
-			return;
-		}
-		
-		NSString *filename = [metadata valueForAttribute:@"kMDItemFSName"];
-		if (filename != nil) {
-			NSString *path = [[self screenCaptureLocation] stringByAppendingPathComponent:filename];
-			if (path != nil && [[NSFileManager defaultManager] fileExistsAtPath:path]) {
-				// Create pasteboard
-				NSPasteboard *pasteboard = [NSPasteboard pasteboardWithUniqueName];
-				
-				NSPasteboardItem *item = [[NSPasteboardItem alloc] init];
-				[item setString:[[NSURL fileURLWithPath:path] absoluteString] forType:(NSString *)kUTTypeFileURL];
-				if ([pasteboard writeObjects:[NSArray arrayWithObject:item]]) {
-					[self.helper handlePasteboardWithName:pasteboard.name];
-				}
-				[item release];
-			}
-		}
-	}
+- (id)metadataQuery:(NSMetadataQuery *)query replacementObjectForResultObject:(NSMetadataItem *)result
+{   
+    if (!result) {
+        return result;
+    }
+    
+    // Check dates (NSPredicate fails to do so)
+    NSDate *modificationDate = [result valueForAttribute:@"kMDItemContentModificationDate"];
+    NSDate *creationDate     = [result valueForAttribute:@"kMDItemContentCreationDate"];
+    NSDate *lastUsedDate     = [result valueForAttribute:@"kMDItemLastUsedDate"];
+    if (![creationDate isEqualToDate:modificationDate] || ![creationDate isEqualToDate:lastUsedDate]) {
+        return result;
+    }
+    
+    NSString *filename = [result valueForAttribute:@"kMDItemFSName"];
+    if (filename != nil) {
+        NSString *path = [[self screenCaptureLocation] stringByAppendingPathComponent:filename];
+        if (path != nil && [[NSFileManager defaultManager] fileExistsAtPath:path]) {
+            // Create pasteboard
+            NSPasteboard *pasteboard = [NSPasteboard pasteboardWithUniqueName];
+            
+            NSPasteboardItem *item = [[NSPasteboardItem alloc] init];
+            [item setString:[[NSURL fileURLWithPath:path] absoluteString] forType:(NSString *)kUTTypeFileURL];
+            if ([pasteboard writeObjects:[NSArray arrayWithObject:item]]) {
+                [self.helper handlePasteboardWithName:pasteboard.name];
+            }
+            [item release];
+        }
+    }
+    
+    return result;
 }
 
 #pragma mark -
