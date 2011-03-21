@@ -13,5 +13,4 @@
 @optional
 - (id)initWithHelper:(id <CLRaindropHelperProtocol>)helper;
 - (NSString *)pasteboardNameForTriggeredRaindrop;
-- (void)cleanupRaindrop;
 @end
