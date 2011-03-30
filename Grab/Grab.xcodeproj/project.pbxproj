@@ -28,7 +28,7 @@
 		4BE8F99A1343BFBD00C3C33B /* CLRaindropProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLRaindropProtocol.h; path = ../../CLRaindropProtocol.h; sourceTree = "<group>"; };
 		4BE8F99B1343BFBD00C3C33B /* NSPasteboard+NPStateRestoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSPasteboard+NPStateRestoration.h"; path = "../../NSPasteboard+NPStateRestoration.h"; sourceTree = "<group>"; };
 		4BE8F99C1343BFBD00C3C33B /* NSPasteboard+NPStateRestoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSPasteboard+NPStateRestoration.m"; path = "../../NSPasteboard+NPStateRestoration.m"; sourceTree = "<group>"; };
-		4BE8F9FF1343C50D00C3C33B /* Raindrop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Raindrop.plist; path = ../../Firefox/Firefox/Raindrop.plist; sourceTree = "<group>"; };
+		4BE8F9FF1343C50D00C3C33B /* Raindrop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Raindrop.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
