@@ -5,11 +5,11 @@
 	<key>CLRaindropCreator</key>
 	<string>Linebreak S.L.</string>
 	<key>CLRaindropDescription</key>
-	<string>Uploads the frontmost grab.</string>
+	<string>Shortens the front window&apos;s URL.</string>
 	<key>CLRaindropName</key>
-	<string>Grab</string>
+	<string>Firefox</string>
 	<key>CLRaindropTargetBundleID</key>
-	<string>com.apple.Grab</string>
+	<string>org.mozilla.firefox</string>
 	<key>CLRaindropURL</key>
 	<string>http://getcloudapp.com/</string>
 </dict>
