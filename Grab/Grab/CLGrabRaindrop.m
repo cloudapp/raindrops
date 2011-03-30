@@ -17,18 +17,21 @@
     [[NSPasteboard generalPasteboard] savePasteboardState];
     {
         NSInteger origCount = [[NSPasteboard generalPasteboard] changeCount];
-        
+
         CGEventRef cDown = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)8, true);
         CGEventSetFlags(cDown, kCGEventFlagMaskCommand);
         CGEventPost(kCGSessionEventTap, cDown);
+        CFRelease(cDown);
         
         CGEventRef cUp = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)8, false);
         CGEventSetFlags(cUp, kCGEventFlagMaskCommand);
         CGEventPost(kCGSessionEventTap, cUp);
+        CFRelease(cUp);
         
         CGEventRef commandUp = CGEventCreateKeyboardEvent(NULL, (CGKeyCode)55, false);
         CGEventPost(kCGSessionEventTap, commandUp);
-
+        CFRelease(commandUp);
+        
         [NSThread sleepForTimeInterval:0.55];
         
         NSInteger newCount = [[NSPasteboard generalPasteboard] changeCount];
@@ -48,12 +51,12 @@
     if (imageData == nil || [imageData length] == 0)
         return nil;
     
-    NSBitmapImageRep *bitRep = [[[NSBitmapImageRep alloc] initWithData:imageData] autorelease];
+    NSBitmapImageRep *bitRep = [[NSBitmapImageRep alloc] initWithData:imageData];
     if (bitRep == nil)
         return nil;
     NSData *pngData = [bitRep representationUsingType:NSPNGFileType properties:nil];
     [bitRep release];
-    
+                                
     NSPasteboard *pasteboard = [NSPasteboard pasteboardWithUniqueName];
     
     NSPasteboardItem *item = [[NSPasteboardItem alloc] init];
