@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BE8F9851343BE8F00C3C33B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE8F9841343BE8F00C3C33B /* Cocoa.framework */; };
+		4BE8F98F1343BE8F00C3C33B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BE8F98D1343BE8F00C3C33B /* InfoPlist.strings */; };
+		4BE8F9981343BF3D00C3C33B /* CLGrabRaindrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8F9971343BF3D00C3C33B /* CLGrabRaindrop.m */; };
+		4BE8F99D1343BFBD00C3C33B /* NSPasteboard+NPStateRestoration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE8F99C1343BFBD00C3C33B /* NSPasteboard+NPStateRestoration.m */; };
+		4BE8FA001343C50D00C3C33B /* Raindrop.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE8F9FF1343C50D00C3C33B /* Raindrop.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4BE8F9811343BE8F00C3C33B /* Grab.raindrop */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Grab.raindrop; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BE8F9841343BE8F00C3C33B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4BE8F9871343BE8F00C3C33B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4BE8F9881343BE8F00C3C33B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4BE8F9891343BE8F00C3C33B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4BE8F98C1343BE8F00C3C33B /* Grab-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Grab-Info.plist"; sourceTree = "<group>"; };
+		4BE8F98E1343BE8F00C3C33B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4BE8F9901343BE8F00C3C33B /* Grab-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Grab-Prefix.pch"; sourceTree = "<group>"; };
+		4BE8F9961343BF3D00C3C33B /* CLGrabRaindrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLGrabRaindrop.h; sourceTree = "<group>"; };
+		4BE8F9971343BF3D00C3C33B /* CLGrabRaindrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLGrabRaindrop.m; sourceTree = "<group>"; };
+		4BE8F99A1343BFBD00C3C33B /* CLRaindropProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLRaindropProtocol.h; path = ../../CLRaindropProtocol.h; sourceTree = "<group>"; };
+		4BE8F99B1343BFBD00C3C33B /* NSPasteboard+NPStateRestoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSPasteboard+NPStateRestoration.h"; path = "../../NSPasteboard+NPStateRestoration.h"; sourceTree = "<group>"; };
+		4BE8F99C1343BFBD00C3C33B /* NSPasteboard+NPStateRestoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSPasteboard+NPStateRestoration.m"; path = "../../NSPasteboard+NPStateRestoration.m"; sourceTree = "<group>"; };
+		4BE8F9FF1343C50D00C3C33B /* Raindrop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Raindrop.plist; path = ../../Firefox/Firefox/Raindrop.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BE8F97E1343BE8F00C3C33B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BE8F9851343BE8F00C3C33B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BE8F9761343BE8F00C3C33B = {
+			isa = PBXGroup;
+			children = (
+				4BE8F98A1343BE8F00C3C33B /* Grab */,
+				4BE8F9831343BE8F00C3C33B /* Frameworks */,
+				4BE8F9821343BE8F00C3C33B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BE8F9821343BE8F00C3C33B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BE8F9811343BE8F00C3C33B /* Grab.raindrop */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BE8F9831343BE8F00C3C33B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BE8F9841343BE8F00C3C33B /* Cocoa.framework */,
+				4BE8F9861343BE8F00C3C33B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BE8F9861343BE8F00C3C33B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BE8F9871343BE8F00C3C33B /* AppKit.framework */,
+				4BE8F9881343BE8F00C3C33B /* CoreData.framework */,
+				4BE8F9891343BE8F00C3C33B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4BE8F98A1343BE8F00C3C33B /* Grab */ = {
+			isa = PBXGroup;
+			children = (
+				4BE8F9991343BF4300C3C33B /* Classes */,
+				4BE8F98B1343BE8F00C3C33B /* Supporting Files */,
+			);
+			path = Grab;
+			sourceTree = "<group>";
+		};
+		4BE8F98B1343BE8F00C3C33B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BE8F9FF1343C50D00C3C33B /* Raindrop.plist */,
+				4BE8F98C1343BE8F00C3C33B /* Grab-Info.plist */,
+				4BE8F98D1343BE8F00C3C33B /* InfoPlist.strings */,
+				4BE8F9901343BE8F00C3C33B /* Grab-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4BE8F9991343BF4300C3C33B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4BE8F9961343BF3D00C3C33B /* CLGrabRaindrop.h */,
+				4BE8F9971343BF3D00C3C33B /* CLGrabRaindrop.m */,
+				4BE8F99A1343BFBD00C3C33B /* CLRaindropProtocol.h */,
+				4BE8F99B1343BFBD00C3C33B /* NSPasteboard+NPStateRestoration.h */,
+				4BE8F99C1343BFBD00C3C33B /* NSPasteboard+NPStateRestoration.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BE8F9801343BE8F00C3C33B /* Grab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BE8F9931343BE8F00C3C33B /* Build configuration list for PBXNativeTarget "Grab" */;
+			buildPhases = (
+				4BE8F97D1343BE8F00C3C33B /* Sources */,
+				4BE8F97E1343BE8F00C3C33B /* Frameworks */,
+				4BE8F97F1343BE8F00C3C33B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Grab;
+			productName = Grab;
+			productReference = 4BE8F9811343BE8F00C3C33B /* Grab.raindrop */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BE8F9781343BE8F00C3C33B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Linebreak;
+			};
+			buildConfigurationList = 4BE8F97B1343BE8F00C3C33B /* Build configuration list for PBXProject "Grab" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4BE8F9761343BE8F00C3C33B;
+			productRefGroup = 4BE8F9821343BE8F00C3C33B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BE8F9801343BE8F00C3C33B /* Grab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BE8F97F1343BE8F00C3C33B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BE8F98F1343BE8F00C3C33B /* InfoPlist.strings in Resources */,
+				4BE8FA001343C50D00C3C33B /* Raindrop.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BE8F97D1343BE8F00C3C33B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BE8F9981343BF3D00C3C33B /* CLGrabRaindrop.m in Sources */,
+				4BE8F99D1343BFBD00C3C33B /* NSPasteboard+NPStateRestoration.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4BE8F98D1343BE8F00C3C33B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BE8F98E1343BE8F00C3C33B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4BE8F9911343BE8F00C3C33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4BE8F9921343BE8F00C3C33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4BE8F9941343BE8F00C3C33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grab/Grab-Prefix.pch";
+				INFOPLIST_FILE = "Grab/Grab-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = raindrop;
+			};
+			name = Debug;
+		};
+		4BE8F9951343BE8F00C3C33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Grab/Grab-Prefix.pch";
+				INFOPLIST_FILE = "Grab/Grab-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = raindrop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BE8F97B1343BE8F00C3C33B /* Build configuration list for PBXProject "Grab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BE8F9911343BE8F00C3C33B /* Debug */,
+				4BE8F9921343BE8F00C3C33B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BE8F9931343BE8F00C3C33B /* Build configuration list for PBXNativeTarget "Grab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BE8F9941343BE8F00C3C33B /* Debug */,
+				4BE8F9951343BE8F00C3C33B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4BE8F9781343BE8F00C3C33B /* Project object */;
+}
