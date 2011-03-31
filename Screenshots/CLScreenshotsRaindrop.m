@@ -18,11 +18,13 @@
 {
 	if ((self = [super init])) {
 		self.helper = theHelper;
+        
+        _startDate = [[NSDate date] retain];
 		
         // Setup query. Do not use KVO because it (for very odd reasons) retains the observer
 		_metadataQuery = [[NSMetadataQuery alloc] init];
 		[_metadataQuery setSearchScopes:[NSArray arrayWithObject:[self screenCaptureLocation]]];
-		NSString *predicateFormat = @"(kMDItemIsScreenCapture = YES) && (kMDItemContentCreationDate > %@)";
+		NSString *predicateFormat = @"kMDItemIsScreenCapture = YES";
 		NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat, [NSDate date]];
 		[_metadataQuery setPredicate:predicate];
 		[_metadataQuery setNotificationBatchingInterval:0.1f];
@@ -33,7 +35,7 @@
 }
 
 #pragma mark -
-#pragma mark KVO
+#pragma mark NSMetadataQueryDelegate
 
 - (id)metadataQuery:(NSMetadataQuery *)query replacementObjectForResultObject:(NSMetadataItem *)result
 {   
@@ -42,10 +44,11 @@
     }
     
     // Check dates (NSPredicate fails to do so)
+    NSDate *fsCreationDate   = [result valueForAttribute:@"kMDItemFSCreationDate"];
     NSDate *modificationDate = [result valueForAttribute:@"kMDItemContentModificationDate"];
     NSDate *creationDate     = [result valueForAttribute:@"kMDItemContentCreationDate"];
     NSDate *lastUsedDate     = [result valueForAttribute:@"kMDItemLastUsedDate"];
-    if (![creationDate isEqualToDate:modificationDate] || ![creationDate isEqualToDate:lastUsedDate]) {
+    if ([fsCreationDate timeIntervalSinceDate:_startDate] < 0.0f || modificationDate != nil || creationDate != nil || lastUsedDate != nil) {
         return result;
     }
     
@@ -97,6 +100,7 @@
 {
 	self.helper = nil;
 	
+    [_startDate release];
 	[_metadataQuery stopQuery];
 	[_metadataQuery release];
 	

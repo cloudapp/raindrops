@@ -13,6 +13,8 @@
 
 @interface CLScreenshotsRaindrop : NSObject <CLRaindropProtocol, NSMetadataQueryDelegate> {
 	id <CLRaindropHelperProtocol> _helper;
+    
+    NSDate *_startDate;
 	NSMetadataQuery *_metadataQuery;
 }
 
