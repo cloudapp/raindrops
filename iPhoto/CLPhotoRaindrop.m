@@ -24,7 +24,7 @@
 	for (iPhotoPhoto *photo in selectedPhotos) {
 		if ([photo isKindOfClass:NSClassFromString(@"IPhotoPhoto")]) { // Hack to keep compiler happy
 			NSPasteboardItem *item = [[NSPasteboardItem alloc] init];
-			[item setString:[photo imagePath] forType:(NSString *)kUTTypeFileURL];
+			[item setString:[[NSURL fileURLWithPath:[photo imagePath]] absoluteString] forType:(NSString *)kUTTypeFileURL];
 			[items addObject:item];
 			[item release];
 		}
