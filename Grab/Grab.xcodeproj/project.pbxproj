@@ -236,6 +236,7 @@
 				INFOPLIST_FILE = "Grab/Grab-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Debug;
@@ -252,6 +253,7 @@
 				INFOPLIST_FILE = "Grab/Grab-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Release;

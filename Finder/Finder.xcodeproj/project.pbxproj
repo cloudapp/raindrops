@@ -235,6 +235,7 @@
 				INFOPLIST_FILE = "Finder-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Debug;
@@ -251,6 +252,7 @@
 				INFOPLIST_FILE = "Finder-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Release;

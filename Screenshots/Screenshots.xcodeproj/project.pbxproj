@@ -211,6 +211,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Screenshots;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Debug;
@@ -226,6 +227,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Screenshots;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Release;

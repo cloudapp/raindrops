@@ -26,7 +26,7 @@
 		8C0335151311279300155FD7 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		8C033522131127EB00155FD7 /* Raindrop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Raindrop.plist; sourceTree = "<group>"; };
 		8CB0D7F2134E5ABD0053EF72 /* iPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoto.h; sourceTree = "<group>"; };
-		8D5B49B6048680CD000E48DA /* iTunes.raindrop */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunes.raindrop; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B6048680CD000E48DA /* iPhoto.raindrop */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhoto.raindrop; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -108,7 +108,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D5B49B6048680CD000E48DA /* iTunes.raindrop */,
+				8D5B49B6048680CD000E48DA /* iPhoto.raindrop */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 			name = iPhoto;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = iTunes;
-			productReference = 8D5B49B6048680CD000E48DA /* iTunes.raindrop */;
+			productReference = 8D5B49B6048680CD000E48DA /* iPhoto.raindrop */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -215,6 +215,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = iPhoto;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Debug;
@@ -230,6 +231,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = iPhoto;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Release;
