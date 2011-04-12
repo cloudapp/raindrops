@@ -14,9 +14,6 @@
 @interface CLScreenshotsRaindrop : NSObject <CLRaindropProtocol, NSMetadataQueryDelegate> {
 	id <CLRaindropHelperProtocol> _helper;
     
-    NSTimer *_pasteboardTimer;
-    NSUInteger _pasteboardChangeCount;
-    
     NSDate *_startDate;
 	NSMetadataQuery *_metadataQuery;
 }

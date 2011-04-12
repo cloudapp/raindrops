@@ -10,13 +10,6 @@
 #import "CLRaindropHelperProtocol.h"
 
 
-@interface CLScreenshotsRaindrop()
-
-- (void)_pasteboardTimerDidFire:(NSTimer *)timer;
-
-@end
-
-
 @implementation CLScreenshotsRaindrop
 
 @synthesize helper = _helper;
@@ -25,14 +18,6 @@
 {
 	if ((self = [super init])) {
 		self.helper = theHelper;
-        
-        _pasteboardChangeCount = [[NSPasteboard generalPasteboard] changeCount];
-        _pasteboardTimer = [[NSTimer timerWithTimeInterval:0.5f
-                                                    target:self
-                                                  selector:@selector(_pasteboardTimerDidFire:)
-                                                  userInfo:nil
-                                                   repeats:YES] retain];
-        [[NSRunLoop currentRunLoop] addTimer:_pasteboardTimer forMode:NSRunLoopCommonModes];
         
         _startDate = [[NSDate date] retain];
 		
@@ -114,9 +99,7 @@
 - (void)dealloc
 {
 	self.helper = nil;
-	
-    [_pasteboardTimer invalidate];
-    [_pasteboardTimer release];
+
     [_startDate release];
 	[_metadataQuery stopQuery];
 	[_metadataQuery release];
@@ -124,39 +107,5 @@
 	[super dealloc];
 }
 
-#pragma mark -
-#pragma mark Private methods
-
-- (void)_pasteboardTimerDidFire:(NSTimer *)timer
-{
-    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
-    if ([pasteboard changeCount] == _pasteboardChangeCount) {
-        return;
-    }
-    _pasteboardChangeCount = [pasteboard changeCount];
-        
-    if ([[pasteboard pasteboardItems] count] != 1) {
-        return;
-    }
-        
-    NSArray *types = [pasteboard types];
-    if ([types count] != 4) {
-        return;
-    }
-    if (![types containsObject:(NSString *)kUTTypePNG] || ![types containsObject:@"Apple PNG pasteboard type"] || ![types containsObject:(NSString *)kUTTypeTIFF] || ![types containsObject:@"NeXT TIFF v4.0 pasteboard type"]) {
-        return;
-    }
-        
-    // Create pasteboard
-    NSPasteboard *uniquePasteboard = [NSPasteboard pasteboardWithUniqueName];
-    NSPasteboardItem *item = [[NSPasteboardItem alloc] init];
-    [item setData:[pasteboard dataForType:(NSString *)kUTTypePNG] forType:(NSString *)kUTTypePNG];
-    
-    if ([uniquePasteboard writeObjects:[NSArray arrayWithObject:item]]) {
-        [self.helper handlePasteboardWithName:uniquePasteboard.name];
-    }
-    
-    [item release];
-}
 
 @end
