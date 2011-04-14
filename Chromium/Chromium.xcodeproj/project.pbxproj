@@ -44,7 +44,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		089C166AFE841209C02AAC07 /* Chrome */ = {
+		089C166AFE841209C02AAC07 /* Chromium */ = {
 			isa = PBXGroup;
 			children = (
 				08FB77AFFE84173DC02AAC07 /* Classes */,
@@ -157,7 +157,7 @@
 				French,
 				German,
 			);
-			mainGroup = 089C166AFE841209C02AAC07 /* Chrome */;
+			mainGroup = 089C166AFE841209C02AAC07 /* Chromium */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -215,6 +215,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Chromium;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Debug;
@@ -230,6 +231,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				PRODUCT_NAME = Chromium;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = raindrop;
 			};
 			name = Release;
