@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>CLRaindropCreator</key>
-	<string>Linebreak S.L.</string>
-	<key>CLRaindropURL</key>
-	<string>http://getcloudapp.com/</string>
-	<key>CLRaindropName</key>
-	<string>Screenshots</string>
+	<string>CloudApp</string>
 	<key>CLRaindropDescription</key>
 	<string>Automatically uploads screenshot files.</string>
-	<key>CLRaindropDownpourEnabled</key>
-	<true/>
 	<key>CLRaindropDownpourActionDescription</key>
 	<string>Autoupload Screenshots</string>
+	<key>CLRaindropDownpourEnabled</key>
+	<true/>
+	<key>CLRaindropName</key>
+	<string>Screenshots</string>
+	<key>CLRaindropURL</key>
+	<string>http://getcloudapp.com/</string>
 </dict>
 </plist>
