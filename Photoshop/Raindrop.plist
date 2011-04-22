@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>CLRaindropCreator</key>
-	<string>CloudApp</string>
-	<key>CLRaindropDescription</key>
-	<string>Uploads the frontmost document in its current state.</string>
-	<key>CLRaindropName</key>
-	<string>Photoshop</string>
-	<key>CLRaindropTargetBundleID</key>
-	<string>com.adobe.Photoshop</string>
+	<string>Linebreak S.L.</string>
 	<key>CLRaindropURL</key>
 	<string>http://getcloudapp.com/</string>
+	<key>CLRaindropTargetBundleID</key>
+	<string>com.adobe.Photoshop</string>
+	<key>CLRaindropName</key>
+	<string>Photoshop</string>
+	<key>CLRaindropDescription</key>
+	<string>Uploads the frontmost document in its current state.</string>
 </dict>
 </plist>
