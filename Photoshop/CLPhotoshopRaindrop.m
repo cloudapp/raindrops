@@ -15,10 +15,6 @@
 
 - (NSString *)pasteboardNameForTriggeredRaindrop {
 	PhotoshopApplication *adobePhotoshop = [SBApplication applicationWithBundleIdentifier:@"com.adobe.Photoshop"];
-	SBElementArray *docs = [adobePhotoshop documents];
-
-	if (docs == nil || [docs count] == 0)
-		return nil;
 	
 	PhotoshopDocument *currDoc = [adobePhotoshop currentDocument];	
 	PhotoshopDocument *temp = [currDoc saveIn:[NSURL URLWithString:kTempFileLocation] as:PhotoshopSvFmPNG copying:YES appending:PhotoshopE300LowercaseExtension withOptions:nil];
