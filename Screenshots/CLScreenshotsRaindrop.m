@@ -43,14 +43,19 @@
         return result;
     }
     
-    // Check dates (NSPredicate fails to do so)
-    NSDate *fsCreationDate   = [result valueForAttribute:@"kMDItemFSCreationDate"];
-    NSDate *modificationDate = [result valueForAttribute:@"kMDItemContentModificationDate"];
-    NSDate *creationDate     = [result valueForAttribute:@"kMDItemContentCreationDate"];
-    NSDate *lastUsedDate     = [result valueForAttribute:@"kMDItemLastUsedDate"];
-    if ([fsCreationDate timeIntervalSinceDate:_startDate] < 0.0f || modificationDate != nil || creationDate != nil || lastUsedDate != nil) {
-        return result;
-    }
+		// Check dates (NSPredicate fails to do so)
+		NSDate *fsCreationDate   = [result valueForAttribute:@"kMDItemFSCreationDate"];
+		//NSDate *modificationDate = [result valueForAttribute:@"kMDItemContentModificationDate"];
+		//NSDate *creationDate     = [result valueForAttribute:@"kMDItemContentCreationDate"];
+		NSDate *lastUsedDate     = [result valueForAttribute:@"kMDItemLastUsedDate"];
+		
+		// Fix for 10.8:
+		// modificationDate and creationDate appear to be nil in 10.7 and earlier, but are not nil in 10.8 which was causing auto-uploads to fail
+		//
+		//if ([fsCreationDate timeIntervalSinceDate:_startDate] < 0.0f || modificationDate != nil || creationDate != nil || lastUsedDate != nil) {
+		if ([fsCreationDate timeIntervalSinceDate:_startDate] < 0.0f || lastUsedDate != nil) {
+			return result;
+		}
     
     NSString *filename = [result valueForAttribute:@"kMDItemFSName"];
     if (filename != nil) {
