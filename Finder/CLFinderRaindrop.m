@@ -11,29 +11,31 @@
 
 @implementation CLFinderRaindrop
 
-- (NSString *)pasteboardNameForTriggeredRaindrop {
-    FinderApplication *finder = [SBApplication applicationWithBundleIdentifier:@"com.apple.finder"];
+- (NSString *)pasteboardNameForTriggeredRaindrop
+{
+  FinderApplication *finder = [SBApplication applicationWithBundleIdentifier:@"com.apple.finder"];
 	NSArray *selectedItems = [[finder selection] get];
 	
-	if (selectedItems == nil || [selectedItems count] == 0)
-		return nil;
+  NSLog(@"[finder raindrop] selected items: %@", selectedItems);
+  
+	if (selectedItems == nil || [selectedItems count] == 0) return nil;
 	
 	NSMutableArray *pbItems = [NSMutableArray array];
 	for (FinderItem *curr in selectedItems) {
-		if (![curr respondsToSelector:@selector(URL)])
-			return nil;
+		if (![curr respondsToSelector:@selector(URL)]) return nil;
+    
 		NSURL *theURL = [NSURL URLWithString:[curr URL]];
-        NSPasteboardItem *item = [[[NSPasteboardItem alloc] init] autorelease];
-        [item setString:[theURL absoluteString] forType:(NSString *)kUTTypeFileURL];
+    NSPasteboardItem *item = [[[NSPasteboardItem alloc] init] autorelease];
+    [item setString:theURL.absoluteString forType:(NSString *)kUTTypeFileURL];
 		[pbItems addObject:item];
 	}
     
-    if ([pbItems count] == 0)
-        return nil;
+  if (pbItems.count == 0) return nil;
     
-    NSPasteboard *pasteboard = [NSPasteboard pasteboardWithUniqueName];
+  NSPasteboard *pasteboard = [NSPasteboard pasteboardWithUniqueName];
 	[pasteboard writeObjects:pbItems];
-    return pasteboard.name;
+  
+  return pasteboard.name;
 }
 
 @end
